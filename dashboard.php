@@ -16,55 +16,75 @@ if(!isset($_SESSION['activeUser']))
 
     <title>Hello, world!</title>
   </head>
-  <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost/cred/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Logout</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Dashboard</a>
+
+    <div>
+      <a href="logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
     </div>
   </div>
 </nav>
 
-<div class="container mt-4 ">
-	<div class="card" style="width: 18rem;">
-  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-danger">Logout</a>
+
+<!-- MAIN CONTAINER -->
+<div class="container my-5">
+
+  <!-- Welcome Section -->
+  <div class="p-4 mb-4 bg-light rounded shadow-sm">
+    <h3>Welcome, <?php echo $_SESSION['activeUser']; ?> 👋</h3>
+    <p class="text-muted">This is your dashboard</p>
   </div>
+
+
+  <!-- CARDS GRID -->
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://picsum.photos/300?1" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+          <p class="card-text">Manage your account settings.</p>
+          <a href="#" class="btn btn-primary w-100">Open</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://picsum.photos/300?2" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Reports</h5>
+          <p class="card-text">View your reports and activity.</p>
+          <a href="#" class="btn btn-success w-100">Open</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://picsum.photos/300?3" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Settings</h5>
+          <p class="card-text">Update preferences.</p>
+          <a href="#" class="btn btn-warning w-100">Open</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- LOGOUT SECTION -->
+  <div class="text-center mt-5">
+    <a href="logout.php" class="btn btn-danger px-5">Logout</a>
+  </div>
+
 </div>
-</div>
+
     
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
